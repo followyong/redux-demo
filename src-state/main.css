@@ -1,0 +1,57 @@
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.post{
+  width: 100%;
+  height: 200px;
+  background-color: lightblue;
+  padding-top:70px;
+}
+.postbody{
+  width: 500px;
+  height: 150px;
+  background-color: white;
+  margin:0 auto;
+
+}
+.comment{
+  width: 100%;
+  height: 200px;
+  background-color: #eee;
+  padding-top: 25px;
+}
+.commentbox{
+  width: 500px;
+  height: 150px;
+  background-color: white;
+  line-height: 20px;
+  margin: 0 auto;
+  position:relative;
+  padding:20px;
+  line-height:32px;
+  font-size: 20px;
+}
+.commentbox li{
+  border-bottom: 1px solid #eee;
+}
+.comment-form{
+margin-top: 10px;
+position: absolute;
+bottom: 5px;
+
+}
+.comment-input{
+  width: 300px;
+  height:30px;
+  border: none;
+  border-bottom: 1px solid #D1D1D1;
+  margin-right:5px;
+}
+.comment-button{
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #EEAEEE;
+}
