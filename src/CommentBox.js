@@ -1,28 +1,20 @@
 import React from 'react'
 import store from './store'
+import {connect} from 'react-redux'
 
 class CommentBox extends React.Component{
-
-  state={
-    comments: store.getState()
-  }
   handleSubmit = (e) =>{
     e.preventDefault()
     let newComment = this.comment.value
     store.dispatch({type:'ADD_COMMENT',comment:newComment})
-    this.setState({
-      comments:store.getState()
-    })
     this.myForm.reset()
   }
-
   render(){
-    console.log(store.getState())
     return(
       <div className="comment">
           <div className="commentbox">
               {
-                this.state.comments.map(item => (
+                this.props.comments.map(item => (
                   <li key={Math.random()}>{item}</li>
                 ))
               }
@@ -37,4 +29,8 @@ class CommentBox extends React.Component{
   }
 }
 
-export default CommentBox
+const mapStateToProps = (state)=>({
+  comments:state
+})
+
+export default connect(mapStateToProps)(CommentBox)
