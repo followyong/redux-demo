@@ -1,11 +1,8 @@
 import {createStore} from 'redux'
-import commentReducer from './reducers/comment'
+import rootReducer from './reducers/index'
 
-   let comments=[
-    "hello1",
-    "hello2"
-  ]
 
-  let store=createStore(commentReducer,comments)
+
+  let store=createStore(rootReducer)
 
 export default store
