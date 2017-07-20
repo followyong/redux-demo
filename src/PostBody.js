@@ -8,11 +8,18 @@ class PostBody extends React.Component{
     store.dispatch({type:'INCREMENT_LIKE'})
   }
   render(){
+    let {postId,comments} = this.props
+    let myComments = comments.filter(value => value.postId ===  postId ).map(item => {
+       return item.content
+     })
     return(
       <div className="post">
         <div className="postbody">
+          <div >
+            {this.props.postId}
+          </div>
           <p>
-            {this.props.comments.length} 评论
+            {myComments.length} 评论
           </p>
           <div className="likes-num" onClick={this.handleChange}>
             {this.props.likes} 赞

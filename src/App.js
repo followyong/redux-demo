@@ -1,23 +1,20 @@
 import React from 'react'
-import PostBody from './PostBody'
-import CommentBox from './CommentBox'
-import store from './store'
-import {Provider} from 'react-redux'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import Home from './Home'
+import Postpage from './Postpage'
+
 
 class App extends React.Component{
-
   render(){
     return(
-        <Provider store={store}>
-          <div>
+          <BrowserRouter>
             <div>
-              <PostBody />
+              <Switch>
+                <Route path='/' exact component={Home} />
+                <Route path='/post/:id' component={Postpage} />
+              </Switch>
             </div>
-            <div>
-              <CommentBox />
-            </div>
-          </div>
-        </Provider>
+          </BrowserRouter>
     )
   }
 }

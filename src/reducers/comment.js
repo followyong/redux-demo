@@ -1,14 +1,24 @@
 
 let comments=[
- "hello1",
- "hello2"
+ {
+   content:'hello1',
+   postId: '1'
+ },
+ {
+   content:'yeh',
+   postId: '1'
+ },
+ {
+   content:'hello2',
+   postId: '2'
+ }
 ]
 
 export default function commentReducer(state = comments ,action){
-  console.log(action)
+  // console.log(action)
   switch(action.type){
     case 'ADD_COMMENT':
-      return [...state,action.comment]
+      return [...state,{postId:action.postId,content:action.comment}]
     default:
       return state
   }
