@@ -1,8 +1,8 @@
 import commentReducer from './comment'
 import likeReducer from './like'
-import {combineReducer} from 'redux'
+import {combineReducers} from 'redux'
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
   comments:commentReducer,
   likes:likeReducer
 })

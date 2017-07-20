@@ -14,7 +14,10 @@ class CommentBox extends React.Component{
       <div className="comment">
           <div className="commentbox">
               {
-                this.props.comments.map(item => (
+                // this.props.comments.map(item => (
+                //   <li key={Math.random()}>{item}</li>
+                // ))
+                ['1','2'].map(item => (
                   <li key={Math.random()}>{item}</li>
                 ))
               }
