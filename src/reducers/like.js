@@ -1,8 +1,8 @@
 export default function likeReducer(state = 0 ,action){
   console.log(action)
   switch(action.type){
-    case 'xxx':
-      return state
+    case 'ADD_LIKE':
+      return state+1
     default:
       return state
   }
