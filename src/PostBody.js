@@ -5,9 +5,7 @@ import store from './store'
 class PostBody extends React.Component{
   handleChange = ()=>{
     console.log(store.getState())
-    let newLikes = this.props.likes + 1
-    console.log(newLikes)
-    store.dispatch({type:'ADD_LIKE',like:newLikes})
+    store.dispatch({type:'INCREMENT_LIKE'})
   }
   render(){
     return(
