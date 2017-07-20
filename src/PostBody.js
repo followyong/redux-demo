@@ -7,10 +7,10 @@ class PostBody extends React.Component{
       <div className="post">
         <div className="postbody">
           <p>
-            {this.props.comments.length}
+            {this.props.comments.length}评论
           </p>
           <div className="likes-num">
-            333 赞
+            {this.props.likes}赞
           </div>
         </div>
       </div>
@@ -18,7 +18,8 @@ class PostBody extends React.Component{
   }
 }
 const mapStateToProps = (state) => ({
-  comments:state
+  comments:state.comments,
+  likes:state.likes
 })
 
 export default connect(mapStateToProps)(PostBody)

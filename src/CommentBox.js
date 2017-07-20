@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 class CommentBox extends React.Component{
   handleSubmit = (e) =>{
     e.preventDefault()
+    console.log(store.getState())
     let newComment = this.comment.value
     store.dispatch({type:'ADD_COMMENT',comment:newComment})
     this.myForm.reset()
@@ -14,10 +15,7 @@ class CommentBox extends React.Component{
       <div className="comment">
           <div className="commentbox">
               {
-                // this.props.comments.map(item => (
-                //   <li key={Math.random()}>{item}</li>
-                // ))
-                ['1','2'].map(item => (
+                this.props.comments.map(item => (
                   <li key={Math.random()}>{item}</li>
                 ))
               }
@@ -33,7 +31,7 @@ class CommentBox extends React.Component{
 }
 
 const mapStateToProps = (state)=>({
-  comments:state
+  comments:state.comments
 })
 
 export default connect(mapStateToProps)(CommentBox)
