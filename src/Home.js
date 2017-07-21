@@ -1,17 +1,25 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import PostBody from './PostBody'
+import { connect } from 'react-redux'
 
 class Home extends React.Component{
   render(){
+    let { posts,postId } = this.props
+    console.log('posts', posts)
     return(
       <div>
-        <ul>
-          <li><Link to='/post/1'>git技巧</Link></li>
-          <li><Link to='/post/2'>学习 Redux</Link></li>
-        </ul>
+        {
+          posts.map(item=>(
+            <PostBody key={item.postId} postId={item.postId} />
+          ))
+        }
       </div>
     )
   }
 }
 
-export default Home
+const mapStateToProps = (state) => ({
+  posts: state.posts
+})
+
+export default connect(mapStateToProps)(Home)

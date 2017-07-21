@@ -1,19 +1,24 @@
 import React from 'react'
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import {BrowserRouter,Route,Switch,Link} from 'react-router-dom'
 import Home from './Home'
 import Postpage from './Postpage'
-
+import {Provider} from 'react-redux'
+import store from './store'
 
 class App extends React.Component{
+
   render(){
     return(
           <BrowserRouter>
-            <div>
-              <Switch>
-                <Route path='/' exact component={Home} />
-                <Route path='/post/:id' component={Postpage} />
-              </Switch>
-            </div>
+              <Provider store={store}>
+                <div>
+                  <Link to='/' className="back-home">首页</Link>
+                  <Switch>
+                    <Route path='/' exact component={Home} />
+                    <Route path='/post/:id' component={Postpage} />
+                  </Switch>
+                </div>
+              </Provider>
           </BrowserRouter>
     )
   }

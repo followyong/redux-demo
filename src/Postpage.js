@@ -1,8 +1,8 @@
 import React from 'react'
 import PostBody from './PostBody'
 import CommentBox from './CommentBox'
-import store from './store'
-import {Provider} from 'react-redux'
+
+
 
 
 class Postpage extends React.Component{
@@ -11,12 +11,16 @@ class Postpage extends React.Component{
     console.log(this.props)
     let {id} = this.props.match.params
     return(
-        <Provider store={store}>
             <div>
+              <div>
                 <PostBody postId={id} />
+              </div>
+              <div>
                 <CommentBox postId={id}/>
+              </div>
+
             </div>
-        </Provider>
+
     )
   }
 }

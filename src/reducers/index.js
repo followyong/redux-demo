@@ -1,10 +1,10 @@
 import commentReducer from './comment'
-import likeReducer from './like'
+import postReducer from './post'
 import {combineReducers} from 'redux'
 
 const rootReducer = combineReducers({
   comments:commentReducer,
-  likes:likeReducer
+  posts:postReducer
 })
 
 export default rootReducer
